@@ -162,7 +162,7 @@ void callback_monocular(const sensor_msgs::ImageConstPtr& msg0) {
         return;
     }
 
-    // 难道为了让图像延迟处理？方便更新？
+    // [ydsf16] 难道为了让图像延迟处理？方便更新？
     // send it to our VIO system
     sys->feed_measurement_monocular(time_buffer, img0_buffer, 0);
     viz->visualize();

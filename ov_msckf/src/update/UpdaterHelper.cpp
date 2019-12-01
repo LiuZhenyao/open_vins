@@ -597,6 +597,7 @@ void UpdaterHelper::measurement_compress_inplace(Eigen::MatrixXd &H_x, Eigen::Ve
         return;
 
     // Do measurement compression through givens rotations
+    // [ydsf16] 终于看到正宗的Givens Rotation了。
     Eigen::JacobiRotation<double> tempHo_GR;
     for (int n=0; n<H_x.cols(); n++) {
         for (int m=(int)H_x.rows()-1; m>n; m--) {

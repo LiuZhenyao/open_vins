@@ -108,6 +108,7 @@ void Propagator::propagate_and_clone(State* state, double timestamp) {
     Cov.block(imu_id,imu_id,15,15) += Qd_summed;
 
     // Ensure the covariance is symmetric
+    // [ydsf16] 这一步蛮有意思的，这样做合理吗？
     Cov = 0.5*(Cov+Cov.transpose());
 
     // Set timestamp data
@@ -140,6 +141,7 @@ std::vector<Propagator::IMUDATA> Propagator::select_imu_readings(const std::vect
 
     // Loop through and find all the needed measurements to propagate with
     // Note we split measurements based on the given state time, and the update timestamp
+    // [ydsf16] 需要根据给定时间对IMU数据插值。
     for(size_t i=0; i<imu_data.size()-1; i++) {
 
         // START OF THE INTEGRATION PERIOD

@@ -29,7 +29,7 @@ using namespace ov_msckf;
 
 void StateHelper::EKFUpdate(State *state, const std::vector<Type *> &H_order, const Eigen::MatrixXd &H,
                             const Eigen::VectorXd &res, const Eigen::MatrixXd &R) {
-
+    // TODO: [ydsf16] 这里的更新使用的Eigen的东西没有看太明白。
     //==========================================================
     //==========================================================
     // Part of the Kalman Gain K = (P*H^T)*S^{-1} = M*S^{-1}
