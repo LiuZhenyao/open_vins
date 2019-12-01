@@ -1,8 +1,9 @@
 
 
+## Open VINS with new comments from ydsf16. Just for personal learning.
+
+
 # Open VINS
-
-
 Welcome to the Open VINS project!
 The Open VINS project houses some core computer vision code along with a state-of-the art filter-based visual-inertial estimator.
 The core filter is an [Extended Kalman filter](https://en.wikipedia.org/wiki/Extended_Kalman_filter) which fuses inertial information with sparse visual feature tracks.
